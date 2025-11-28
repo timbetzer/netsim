@@ -6,13 +6,13 @@ var devices = {};
 var playerPackets = [];
 
 var packetFields = [
-	{layer:"Netzwerk", fields:[
+	{layer:"Paket", fields:[
 		"srcip", "dstip"
 	]},
 	{layer:"Transport", fields:[
 		"proto", "ttl"
 	]},
-        {layer:"Application", fields:[
+        {layer:"Anwendung", fields:[
                 "type", "key"
 	]}
 ];
