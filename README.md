@@ -13,6 +13,7 @@ You don't need to download and run the code yourself; you can use our hosted ver
 
 
 # acknowledgements
+- Translated by Tim Betzer 2025
 - Updated by Techie Mike 2025
 - created by erinn atwater and cecylia bocovich
 - device images designed by [madebyoliver](http://www.flaticon.com/authors/madebyoliver) from Flaticon
