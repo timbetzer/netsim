@@ -127,7 +127,7 @@ if (LOGGEDIN && !isset($_GET['level'])) {
     <h1><?= htmlspecialchars($leveldata['name']) ?></h1>
 
     <?php if (LOGGEDIN) { ?>
-        <button onclick="location.href='./'">Level List</button>
+        <button onclick="location.href='./'">Level Übersicht</button>
     <?php } ?>
 
     <div id="leveldescrip">

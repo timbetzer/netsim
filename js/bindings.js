@@ -8,7 +8,7 @@ function onDeviceClick() {
 }
 
 function onPacketClick() {
-	var str = "<h3>Packet Info</h3>";
+	var str = "<h3>Paket Info</h3>";
 	str += onPacketClick_helper("network", this);
 	str += onPacketClick_helper("transport", this);
 	str += onPacketClick_helper("application", this);
@@ -23,8 +23,15 @@ function onPacketClick_helper(layer, pkt) {
 	if (!pkt.hasOwnProperty(layer)) return "";
 	
 	var keys = Object.keys(pkt[layer]);
-	var str = "<h4>"+layer+" Schicht</h4><table>";
-	
+	if (layer === "network") {
+		var str = "<h4>Paket Schicht</h4><table>";
+	}
+	if (layer === "transport") {
+		var str = "<h4>Transport Schicht</h4><table>";
+	}
+	if (layer === "application") {
+		var str = "<h4>Anwendungsschicht</h4><table>";
+	}
 	for (var i = 0; i < keys.length; i++) str += "<tr><td>"+keys[i]+":</td><td>"+pkt[layer][keys[i]]+"</td></tr>";
 	return str+"</table>";
 }
