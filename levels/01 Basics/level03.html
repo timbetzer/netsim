@@ -1,17 +1,15 @@
+<p>Bis jetzt haben wir sehr einfache Pakete gesehen. Diese Pakete zeigten nur die Quelle (wer das Paket gesendet hat) und das
+Ziel (wer das Paket empfangen hat). In diesem Level sehen wir ein komplexeres Paket, das dem Empfänger Informationen darüber gibt,
+wie er antworten soll.</p>
 
-<p>So far we have seen very basic packets. These packets have shown only the source (who sent the packet) and the
-destination (who received the packet). In this level, we will see a more complex packet that will give the recipient
-information about how to respond.
+<p>Pausiere die Simulation, um das Paket anzusehen, das von Alices Computer an Google gesendet wird. Es gibt einen neuen Header in der
+<strong>Transportschicht</strong>. Der Header <strong>proto</strong> definiert das <strong>Protokoll</strong>, das auf dieser Schicht
+ausgeführt wird. Das aufgeführte Protokoll ist <strong>ICMP</strong>, welches verwendet wird, um Computer anzupingen.
+Wenn ein Computer ein Paket mit einer ICMP-Echo-Anfrage (Ping) erhält, antwortet er, indem er ein Paket mit einem ICMP-Echo
+(Pong) zurücksendet. Setze die Simulation fort und achte auf das Antwortpaket, das von Google an Alices Computer gesendet wird.</p>
 
-<p>Pause the simulation to view the packet sent from Alice's computer to Google. There is a new header under the
-<strong>transport layer</strong>. The header, <strong>proto</strong> defines the <strong>protocol</strong> that will
-be run on this layer. The protocol listed is <strong>ICMP</strong>, which is used to <strong>ping</strong> computers. When a
-computer receives a packet with an ICMP echo request (ping) they respond by sending back a packet with an ICMP echo
-(pong). Resume the simulation and notice the response packet sent from Google to Alice's computer.
-
-
-<h3>Level Objectives</h3>
+<h3>Levelziele</h3>
 
 <ul>
-    <li>To complete this level, you must send 4 more ICMP echo requests from Alice to Google. Proceed as before, by clicking the + to add new packets. Remember to fill in the new <strong>transport layer</strong> header proto header field.</li>
+    <li>Um dieses Level abzuschließen, musst du 4 weitere ICMP-Echo-Anfragen von Alice an Google senden. Gehe vor wie zuvor, indem du auf das + klickst, um neue Pakete hinzuzufügen. Denk daran, das neue <strong>Transportschicht</strong>-Headerfeld „proto“ auszufüllen.</li>
 </ul>

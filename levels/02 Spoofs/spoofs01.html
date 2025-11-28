@@ -1,15 +1,14 @@
+<p>Die srcip- und dstip-Header können leicht geändert werden, um unterschiedliche Quell- und Zieladressen festzulegen.
+In den vorherigen Levels haben wir gesehen, dass sich durch Ändern der Zieladresse die Richtung ändert, in die ein Paket gesendet wird.
+Beachte jedoch, dass wir keine Quelladresse angeben mussten. Tatsächlich berücksichtigen Router nicht, woher ein Paket kommt,
+sondern nur, wohin es geht. Eine Sicherheitslücke des Internets besteht darin, dass wir ein Paket leicht so aussehen lassen können,
+als käme es von einer bestimmten Adresse, obwohl es in Wirklichkeit von einer anderen stammt. Das nennt man
+<strong>Spoofing</strong>.</p>
 
-<p>The srcip and dstip headers can be easily changed to specify different source and destination addresses.
-In the previous levels, we saw that changing the destination address changed the direction in which the packet was sent.
-Note, however, that we did not need to specify a source address. In fact, routers do not take into account where
-a packet is coming from, only where it is going. One security flaw of the Internet is that we can easily make a
-packet <strong>look</strong> like it is coming from one address when it is really coming from another. This is called
-<strong>spoofing</strong>.
+<p>Um dieses Level zu bestehen, sende ein Paket von Alices Computer zu Bobs Computer, das so aussieht, als käme es von Carol.</p>
 
-<p>To pass this level, send a packet from Alice's computer to Bob's computer that looks like it is coming from Carol.
+<p><em>Beachte, dass wir Bob glauben lassen können, dass Carol mit ihm spricht, obwohl wir keine Pakete von Carol senden dürfen!</em></p>
 
-<p><em>Notice that we can trick Bob into thinking Carol is talking to him, even though we're not allowed to send packets from Carol!</em>
+<h3>Levelziele</h3>
 
-<h3>Level Objectives</h3>
-
-<ul><li>make Bob think he received a packet from Carol</li></ul>
+<ul><li>Lass Bob denken, dass er ein Paket von Carol erhalten hat</li></ul>

@@ -18,11 +18,11 @@ if (LOGGEDIN && !isset($_GET['level'])) {
     if (!$leveldata) {
         include 'header.inc.php'; ?>
         <div class="center-content">
-            <h3>Congratulations!</h3>
-            <p>You have completed the final level!</p>
+            <h3>Glückwunsch!</h3>
+            <p>Du hast das finale Level geschafft!</p>
             <img src="./includes/fireworks.gif" alt="Celebration Fireworks">
-            <p><a href="./">Review previous levels</a> to ensure you didn't miss any.</p>
-            <p>Well done! You're officially a hacker now! 🎉</p>
+            <p><a href="./">Überprüf die vorherigen Level</a> um sicherzugehen, dass du nichts verpasst hast.</p>
+            <p>Sehr gut! Hiermit bist du offiziell ein Hacker! 🎉</p>
         </div>
         <?php
         include 'footer.inc.php';
@@ -139,7 +139,7 @@ if (LOGGEDIN && !isset($_GET['level'])) {
 </div>
 
 <div id="editor" style="display:none;">
-    <p>Sent from:</p>
+    <p>Geschickt von:</p>
     <select id="pktFrom">
         <option>Alice</option>
         <option>Bob</option>
@@ -158,21 +158,22 @@ if (LOGGEDIN && !isset($_GET['level'])) {
 </div>
 
 <div id="winner" style="display:none;">
-    <p>You won the level! 🎉</p>
+    <p>Du hast dieses Level geschafft! 🎉</p>
 </div>
 
 <div id="footer">
-    Created by
-    Erinn Atwater and Cecylia Bocovich |
-    Updated by <a href="https://techiemike.com">Techie Mike</a> |
-    Device images by
+    Erstellt von
+    Erinn Atwater und Cecylia Bocovich |
+    Updated von <a href="https://techiemike.com">Techie Mike</a> |
+    Übersetzt von <a href="https://https://net.in.tum.de/members/betzer/">Tim Betzer </a> |
+    Gerätebilder von
     <a href="http://www.flaticon.com/authors/madebyoliver">madebyoliver</a>
 
 </div>
 
 <div id="loading">
     <h2>Netsim</h2>
-    <p>Loading...</p>
+    <p>Ladevorgang...</p>
 </div>
 
 </body>

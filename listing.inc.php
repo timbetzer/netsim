@@ -2,9 +2,9 @@
 
 <div style="float:right;"><input type="button" value="Log out" onclick="location.href='./?logout'"></div>
 
-<p>Welcome to Netsim!  If this is your first time playing, we recommend you start from the first level below, and work your way forward.<p>
+<p>Willkommen bei Netsim! Wenn du zum ersten Mal spielst, empfehlen wir dir, mit dem ersten Level unten zu beginnen und dich weiter vorzuarbeiten.</p>
 
-<p>Please note that this project is still in <strong>beta</strong>. If you find any bugs, you can open an issue on <a href="https://github.com/nomadtechiemike/netsim/issues">Github</a>.</p>
+<p>Bitte beachte, dass sich dieses Projekt noch in der <strong>Beta</strong>-Phase befindet. Wenn du Fehler findest, kannst du ein Issue auf <a href="https://github.com/timbetzer/netsim/issues">GitHub</a> eröffnen.</p>
 
 <?php
 

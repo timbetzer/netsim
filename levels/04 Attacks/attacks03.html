@@ -1,13 +1,15 @@
+<p>In diesem Level verwenden die Router das Feld <strong>Time To Live (TTL)</strong>. Das TTL-Feld verhindert, dass Pakete in
+endlosen Schleifen stecken bleiben: Jeder Router verringert den TTL-Wert um eins, und wenn er jemals null erreicht,
+leitet der Router das Paket nicht weiter und sendet stattdessen eine Fehlermeldung zurück.</p>
 
-<p>In this level, the routers use the <strong>time to live (TTL)</strong> field.  The TTL field is designed to keep packets from getting trapped in infinite loops: each router decreases the TTL value by one, and if it ever reaches zero, it stops forwarding the packet and returns an error message instead.<p>
+<p>Wir haben die IP-Adressen der Router in diesem Level versteckt. Deine Aufgabe ist es, herauszufinden, wer sie sind!</p>
 
-<p>We have hidden the IP addresses of the routers in this level.  Your job is to figure out who they are!</p>
+<p><i><strong>Fun Fact:</strong> Dieser Trick wird „Tracerouting“ genannt, und du kannst ihn in der Realität nutzen, um die Router
+zwischen dir und einem beliebigen Ziel zu sehen. Bitte einen Lehrer, es dir zu zeigen!</i></p>
 
-<p><i><strong>Fun fact:</strong> This trick is called "tracerouting", and you can do it for real to see the routers between you and anyone else. Ask a TA to show you how!</i></p>
-
-<h3>Level Objectives</h3>
+<h3>Levelziele</h3>
 
 <ul>
-	<li>Figure out how to use TTLs to figure out the IP addresses of routers</li>
-	<li>Send a ping to <strong>each</strong> of the four routers between Alice and Google</li>
+	<li>Finde heraus, wie man TTLs benutzt, um die IP-Adressen von Routern zu bestimmen</li>
+	<li>Sende einen Ping an <strong>jeden</strong> der vier Router zwischen Alice und Google</li>
 </ul>

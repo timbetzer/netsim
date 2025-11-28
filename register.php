@@ -57,7 +57,8 @@ include 'header.inc.php';
 
 <h3>Register</h3>
 
-<p>User accounts track your progress through levels. Note that Netsim is in <strong>beta</strong>, so some data may be reset.</p>
+<p>Ein Benutzerkonto verfolgt nur deinen Fortschritt durch die Levels. Beachte, dass sich Netsim in der <strong>Beta</strong>-Phase befindet, sodass einige Daten zurückgesetzt werden können.</p>
+
 
 <!-- Styled Error Message -->
 <?php if (!empty($login_error)) : ?>
