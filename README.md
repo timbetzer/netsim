@@ -1,9 +1,6 @@
 # netsim
 Web-based network simulator for teaching hacking to high schoolers
 
-# try it out
-You don't need to download and run the code yourself; you can use our hosted version at [netsim.techiemike](https://netsim.techiemike.com/).
-
 # installation
 - place files on a webserver
 - copy sample.config.inc.php to config.inc.php (editing if necessary)
