@@ -10,11 +10,11 @@ if (!file_exists(DB_FILE)) {
 	try {
 		$db = new SQLite3(DB_FILE);
 		$db->exec("CREATE TABLE user (id integer PRIMARY KEY,name text,password text)");
-		$db->exec("INSERT INTO user (name, password) VALUES ('erinn','$2y$10$n5ajLY.kMZVjLCNsUuPXFO70VUYLoolpQRGl3RCXOBVIaY4/peWXS')");
+	#	$db->exec("INSERT INTO user (name, password) VALUES ('erinn','$2y$10$n5ajLY.kMZVjLCNsUuPXFO70VUYLoolpQRGl3RCXOBVIaY4/peWXS')");
 		$db->exec("CREATE TABLE category (id integer PRIMARY KEY,name text,orderby integer)");
-		$db->exec("INSERT INTO category (name, orderby) VALUES('Basics', 1),('Spoofs', 2),('Denial of Service', 3),('Attacks', 4)");
+		$db->exec("INSERT INTO category (name, orderby) VALUES('Grundlagen', 1),('Spoofs', 2),('Denial of Service', 3),('Angriffe', 4)");
 		$db->exec("CREATE TABLE level (id integer PRIMARY KEY,category_id integer,name text,orderby integer,filename text)");
-		$db->exec("INSERT INTO level (category_id, name, orderby, filename) VALUES(1, 'Getting started', 1, '01 Basics/level01'),(1, 'Packet fields', 2, '01 Basics/level02'),(1, 'Ping', 3, '01 Basics/level03'),(1, 'Routing', 4, '01 Basics/level04'),(1, 'Modems', 5, '01 Basics/level05'),(2, 'IP Spoofing', 1, '02 Spoofs/spoofs01'),(2, 'Stealing packets', 2, '02 Spoofs/spoofs02'),(3, 'Basic DoS', 1, '03 DoS/dos01'),(3, 'Distributed DoS', 2, '03 DoS/dos02'),(3, 'Smurf attack', 3, '03 DoS/dos03'),(4, 'Man-in-the-middle', 1, '04 Attacks/attacks01'),(4, 'Censorship', 2, '04 Attacks/attacks02'), (4, 'Traceroute', 3, '04 Attacks/attacks03')");
+		$db->exec("INSERT INTO level (category_id, name, orderby, filename) VALUES(1, 'Erste Schritte', 1, '01 Basics/level01'),(1, 'Paket Felder', 2, '01 Basics/level02'),(1, 'Ping', 3, '01 Basics/level03'),(1, 'Routing', 4, '01 Basics/level04'),(1, 'Modems', 5, '01 Basics/level05'),(2, 'IP Spoofing', 1, '02 Spoofs/spoofs01'),(2, 'Pakete klauen', 2, '02 Spoofs/spoofs02'),(3, 'Einfacher DoS', 1, '03 DoS/dos01'),(3, 'Verteilter DoS', 2, '03 DoS/dos02'),(3, 'Smurf Angriff', 3, '03 DoS/dos03'),(4, 'Man-in-the-middle', 1, '04 Attacks/attacks01'),(4, 'Zensur', 2, '04 Attacks/attacks02'), (4, 'Traceroute', 3, '04 Attacks/attacks03')");
 		$db->exec("CREATE TABLE solns (id integer PRIMARY KEY,user_id integer,level_id integer,completed integer,json text)");
 
 		echo "<p>The database was initialized successfully! <a href=\"./\">Continue...</a></p>\n";

@@ -186,10 +186,10 @@ function donePacket() {
 		levelOver = true;
 		$.get("./solns.ajax.php?level="+levelid+"&method=win");
 		$("#winner").dialog({
-			title:"You win!",
+			title:"Geschafft!",
 			resizable:false,
 			modal:true,
-			buttons:[{text:"Go to the next level", click:function(){ location.href="./?level="+level.nextLevel; }}]
+			buttons:[{text:"Zum nächsten Level", click:function(){ location.href="./?level="+level.nextLevel; }}]
 		});
 	}
 
