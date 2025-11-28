@@ -52,7 +52,16 @@ function createPacketEditor(index, packet) {
 	str += "</select><br>";
 
 	for (var i = 0; i < packetFields.length; i++) {
-		str += "<fieldset><legend>"+packetFields[i].layer+"</legend>";
+		if (packetFields[i].layer == "network"){
+			str += "<fieldset><legend>Paket</legend>";
+		}
+		if (packetFields[i].layer == "transport"){
+			str += "<fieldset><legend>Transport</legend>";
+		}
+		if (packetFields[i].layer == "application"){
+			str += "<fieldset><legend>Anwendung</legend>";
+		}
+		
 		for (var j = 0; j < packetFields[i].fields.length; j++) {
 			str += packetFields[i].fields[j]+":<br><input type=\"text\" id=\""+packetFields[i].layer+"_"+packetFields[i].fields[j]+"\" value=\""+payloadStr(packet, packetFields[i].layer, packetFields[i].fields[j])+"\"><br>";
 		}
