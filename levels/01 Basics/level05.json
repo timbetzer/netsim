@@ -3,77 +3,138 @@
 		{
 			id:"Alice",
 			ports:1,
-			x:0.2,
-			y:0.6,
-			player:true
-		},
-		{
-			id:"Google",
-			image:"server",
-			ports:1,
-			x:0.8,
-			y:0.4,
-                        script: deviceScripts.ping
+			x:0.5,
+			y:0.1,
+			player:true,
+			image:"imac"
 		},
 		{
 			id:"Bob",
 			ports:1,
-			x:0.2,
-			y:0.2,
-			image:"macbook"
+			x:0.25,
+			y:0.75,
+			image:"imac",
+			player:true
 		},
 		{
-			id:"Home",
-			image:"router",
+			id:"Carol",
+			ports:1,
+			x:0.75,
+			y:0.75,
+			image:"imac",
+			player:true
+		},
+		{
+			id:"Router 1",
 			ports:3,
-			x:0.4,
-			y:0.4,
-                        script: deviceScripts.modem
+			x:0.5,
+			y:0.3,
+			image:"server",
+			script: deviceScripts.manualRouter,
+			rules:[
+				{dstip:"Alice", portNum:0},
+				{dstip:"Bob", portNum:1},
+				{dstip:"Carol", portNum:2}
+			]
+		},
+		{
+			id:"Router 2",
+			type:"ManualRouter",
+			ports:3,
+			x:0.35,
+			y:0.5,
+			image:"server",
+			script: deviceScripts.manualRouter,
+			rules:[
+				{dstip:"Bob", portNum:0},
+				{dstip:"Alice", portNum:1},
+				{dstip:"Carol", portNum:1}
+			]
+		},
+		{
+			id:"Router 3",
+			type:"ManualRouter",
+			ports:3,
+			x:0.65,
+			y:0.5,
+			image:"server",
+			script: deviceScripts.manualRouter,
+			rules:[
+				{dstip:"Carol", portNum:0},
+				{dstip:"Alice", portNum:1},
+				{dstip:"Bob", portNum:1}
+			]
 		}
 	],
 	links:[
 		{
 			src:"Alice", srcport:0,
-			dst:"Home", dstport:1
+			dst:"Router 1", dstport:0
 		},
 		{
 			src:"Bob", srcport:0,
-			dst:"Home", dstport:2
+			dst:"Router 2", dstport:0
 		},
 		{
-			src:"Home", srcport:0,
-			dst:"Google", dstport:0
+			src:"Carol", srcport:0,
+			dst:"Router 3", dstport:0
+		},
+		{
+			src:"Router 1", srcport:1,
+			dst:"Router 2", dstport:1
+		},
+		{
+			src:"Router 1", srcport:2,
+			dst:"Router 3", dstport:1
+		},
+		{
+			src:"Router 2", srcport:2,
+			dst:"Router 3", dstport:2, faulty:"yes"
 		}
+		
 	],
 	timeline:[
 		{
 			type:"packet",
-			at:500,
+			at:50,
 			from:"Alice",
 			payload:{
-				network:{srcip: "Alice", dstip:"Google"}
+				network:{dstip:"Bob",srcip:"Alice"}
 			}
 		},
 		{
 			type:"packet",
-			at:1000,
+			at:150,
 			from:"Bob",
 			payload:{
-				network:{srcip: "Bob", dstip:"Google"},
-				transport:{proto:"example"}
+				network:{dstip:"Alice",srcip:"Bob"}
+			}
+		},
+		{
+			type:"packet",
+			at:210,
+			from:"Alice",
+			payload:{
+				network:{dstip:"Carol",srcip:"Alice"}
+			}
+		},
+		{
+			type:"packet",
+			at:270,
+			from:"Carol",
+			payload:{
+				network:{dstip:"Bob",srcip:"Carol"}
 			}
 		}
 	],
 	triggers:[
-            {
+		{
 			type:"packet",
-			device:"Alice",
+			device:"Carol",
 			payload:{
-				network:{srcip:"Google", dstip:"Alice"},
-				transport:{proto:"ICMP"}
+				network:{srcip:"Bob", dstip:"Carol"}
 			}
-            }
-	    
-        ],
-	nextLevel:6
+		}
+	],
+	nextLevel:5
 }
