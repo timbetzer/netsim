@@ -99,6 +99,16 @@ function create() {
 		graphics.lineTo(dst.sprite.centerX, dst.sprite.centerY);
 	}
 
+	for (var i = 0; i < level.faulty_links.length; i++) {
+		graphics.lineStyle(1, 0xff0000, 1);
+		var src = devices[level.links[i].src];
+		var dst = devices[level.links[i].dst];
+		src.ports[ level.links[i].srcport ] = dst.id;
+		dst.ports[ level.links[i].dstport ] = src.id;
+		graphics.moveTo(src.sprite.centerX, src.sprite.centerY);
+		graphics.lineTo(dst.sprite.centerX, dst.sprite.centerY);
+	}
+
 	var meshSprite = game.add.sprite(0, 0, graphics.generateTexture());
 	meshSprite.sendToBack();
 	graphics.destroy();
