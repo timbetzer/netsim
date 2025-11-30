@@ -26,6 +26,7 @@
 		},
 		{
 			id:"Router 1",
+			type:"ManualRouter",
 			ports:3,
 			x:0.5,
 			y:0.3,
@@ -136,5 +137,5 @@
 			}
 		}
 	],
-	nextLevel:5
+	nextLevel:6
 }
