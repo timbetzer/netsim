@@ -11,11 +11,11 @@ if (!empty($_POST['reg_username']) && !empty($_POST['reg_password']) && !empty($
 
     // Check if username is at least 5 characters
     if (strlen($username) < 5) {
-        $login_error = "Username must be at least 5 characters long.";
+        $login_error = "Nutzername muss mindestens 5 Zeichen lang sein";
     }
     // Check if passwords match
     elseif ($password !== $confirm_password) {
-        $login_error = "Passwords do not match.";
+        $login_error = "Passwörter sind nicht gleich";
     } else {
         // Check if username exists
         $userq = $db->prepare("SELECT id FROM user WHERE name = :name");
@@ -24,7 +24,7 @@ if (!empty($_POST['reg_username']) && !empty($_POST['reg_password']) && !empty($
         $existingUser = $res->fetchArray(SQLITE3_ASSOC);
 
         if ($existingUser) {
-            $login_error = "That username is already taken.";
+            $login_error = "Dieser Nutzername ist belegt. Bitte wähle einen Neuen.";
         } else {
             // Insert new user
             $q = $db->prepare("INSERT INTO user (name, password) VALUES (:name, :password)");
@@ -43,10 +43,10 @@ if (!empty($_POST['reg_username']) && !empty($_POST['reg_password']) && !empty($
                     header('Location: ./');
                     exit();
                 } else {
-                    $login_error = "Registration successful, but login failed. Please try logging in.";
+                    $login_error = "Registrierung erfolgreich, aber der Login ist fehlgeschlagen, bitte probiere erneut dich anzumelden.";
                 }
             } else {
-                $login_error = "Error registering user. Try again later.";
+                $login_error = "Fehler beim Registrieren, bitte probiere es später wieder.";
             }
         }
     }
@@ -83,7 +83,7 @@ include 'header.inc.php';
     <p><label for="confirm_password">Passwort bestätigen:</label><br>
         <input type="password" name="confirm_password" id="confirm_password" required class="ui-widget-content ui-corner-all" style="width: 100%; padding: 5px;"></p>
 
-    <p><input type="submit" value="Register" class="ui-button ui-widget ui-corner-all"></p>
+    <p><input type="submit" value="Registrieren" class="ui-button ui-widget ui-corner-all"></p>
 </form>
 
 <div style="height:150px;"></div>
