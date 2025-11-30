@@ -37,14 +37,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	$res = $userq->execute();
 
 	if ($res === false) {
-		$login_error = "Username or password incorrect.";
+		$login_error = "Nutzername ooder Passwort falsch.";
 	} else {
 		$res = $res->fetchArray();
 		if (password_verify($_POST['password'], $res['password'])) {
 			$_SESSION['cs4g_user_id'] = $res['id'];
 			header('Location: ./');
 		} else {
-			$login_error = "Username or password incorrect.";
+			$login_error = "Nutzername ooder Passwort falsch.";
 		}
 	}
 } else if (isset($_GET['logout'])) {

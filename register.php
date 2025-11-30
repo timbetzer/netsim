@@ -74,13 +74,13 @@ include 'header.inc.php';
 
 <!-- Styled Registration Form -->
 <form method="post" action="register.php" onsubmit="return validateForm();" class="ui-widget-content ui-corner-all" style="padding: 15px; max-width: 300px;">
-    <p><label for="reg_username">Username:</label><br>
+    <p><label for="reg_username">Nutzername:</label><br>
         <input type="text" name="reg_username" id="reg_username" required minlength="5" class="ui-widget-content ui-corner-all" style="width: 100%; padding: 5px;"></p>
 
-    <p><label for="reg_password">Password:</label><br>
+    <p><label for="reg_password">Passwort:</label><br>
         <input type="password" name="reg_password" id="reg_password" required class="ui-widget-content ui-corner-all" style="width: 100%; padding: 5px;"></p>
 
-    <p><label for="confirm_password">Confirm password:</label><br>
+    <p><label for="confirm_password">Passwort bestätigen:</label><br>
         <input type="password" name="confirm_password" id="confirm_password" required class="ui-widget-content ui-corner-all" style="width: 100%; padding: 5px;"></p>
 
     <p><input type="submit" value="Register" class="ui-button ui-widget ui-corner-all"></p>
