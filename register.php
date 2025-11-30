@@ -55,7 +55,7 @@ if (!empty($_POST['reg_username']) && !empty($_POST['reg_password']) && !empty($
 include 'header.inc.php';
 ?>
 
-<h3>Register</h3>
+<h3>Registrierung</h3>
 
 <p>Ein Benutzerkonto verfolgt nur deinen Fortschritt durch die Levels. Beachte, dass sich Netsim in der <strong>Beta</strong>-Phase befindet, sodass einige Daten zurückgesetzt werden können.</p>
 
