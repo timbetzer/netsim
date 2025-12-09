@@ -165,7 +165,7 @@ if (LOGGEDIN && !isset($_GET['level'])) {
     Erstellt von
     Erinn Atwater und Cecylia Bocovich |
     Updated von <a href="https://techiemike.com">Techie Mike</a> |
-    Übersetzt von <a href="https://https://net.in.tum.de/members/betzer/">Tim Betzer </a> |
+    Übersetzt von <a href="https://net.in.tum.de/members/betzer/">Tim Betzer </a> |
     Gerätebilder von
     <a href="http://www.flaticon.com/authors/madebyoliver">madebyoliver</a> |
     <a href="https://net.in.tum.de/homepage/legal.html">Impressum</a>
